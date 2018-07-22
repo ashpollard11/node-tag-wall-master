@@ -1,0 +1,1 @@
+{"version":3,"sources":["wall.js"],"names":[],"mappings":";AACA;AACA","file":"wall.js","sourcesContent":["\n// upon page load, ask the server for all the tags it has saved, \n// and put them on the screen"]}
