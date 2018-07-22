@@ -12,10 +12,16 @@ let showTag = function () {
 
 	.then(function (response) {
 		console.log(response);
-		response.data.forEach((tag) => {
+
+		// let randomColor = function (element) {
+		// 	response.data.col.forEach((colors) => {
+		// 		
+		// 	})
+		// }
+		response.data.forEach((arr) => {
 			const pEl = document.createElement('p');
 			const arrow = document.createElement('div');
-			pEl.innerHTML = tag;
+			pEl.innerHTML = arr.tags;
 			pEl.classList.add('tag');
 			pEl.appendChild(arrow);
 			wall.appendChild(pEl);
@@ -25,7 +31,12 @@ let showTag = function () {
 			pEl.style.top = Math.floor(Math.random()*window.innerHeight) + 'px';
 			pEl.style.left = Math.floor(Math.random()*window.innerWidth) + 'px';
 
+			pEl.style.color = arr.col;
+			// randomColor(pEl);
 		})
+
+		
+		
 	})
 	  .catch(function (error) {
 		console.log(error);

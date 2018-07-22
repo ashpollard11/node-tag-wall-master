@@ -11,10 +11,16 @@ var showTag = function showTag() {
 
 	axios.get(url).then(function (response) {
 		console.log(response);
-		response.data.forEach(function (tag) {
+
+		// let randomColor = function (element) {
+		// 	response.data.col.forEach((colors) => {
+		// 		
+		// 	})
+		// }
+		response.data.forEach(function (arr) {
 			var pEl = document.createElement('p');
 			var arrow = document.createElement('div');
-			pEl.innerHTML = tag;
+			pEl.innerHTML = arr.tags;
 			pEl.classList.add('tag');
 			pEl.appendChild(arrow);
 			wall.appendChild(pEl);
@@ -22,6 +28,9 @@ var showTag = function showTag() {
 			pEl.style.position = "absolute";
 			pEl.style.top = Math.floor(Math.random() * window.innerHeight) + 'px';
 			pEl.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+
+			pEl.style.color = arr.col;
+			// randomColor(pEl);
 		});
 	}).catch(function (error) {
 		console.log(error);

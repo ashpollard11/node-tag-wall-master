@@ -69,6 +69,11 @@ table {
 	border-spacing: 0;
 }
 
+@font-face {
+	font-family: 'Whoa!';
+	src: url(../../dist/fonts/whoa.ttf);
+}
+
 /* 1. Main Layout ================================= */
 * {
 	box-sizing: border-box;
@@ -97,10 +102,11 @@ body.index {
 /* 2. Content ================================= */
 p.tag {
 	position: absolute;
-	font-family: 'Rock Salt', cursive;
+	font-family: 'Whoa!';
 	font-size: 4em;
 	text-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
 	color: #fff;
+	display: flex;
 }
 
 p.tag div {
@@ -108,6 +114,7 @@ p.tag div {
 	background-size: contain;
 	width: 50px;
 	height: 100px;
+	order: -1;
 }
 
 .index-wrapper {
@@ -126,13 +133,14 @@ p.tag div {
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	height: 25%;
 }
 
 .index-wrapper label {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 30%;
+	width: 35%;
 }
 
 .index-wrapper label input, .index-wrapper label .colors {
@@ -140,7 +148,11 @@ p.tag div {
 }
 
 .index-wrapper input, .index-wrapper .colors, .index-wrapper .tagit {
-	border: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	border-right: 2px solid #fff;
+	border-top: rgba(255, 255, 255, 0.2);
+	border-left: rgba(255, 255, 255, 0.2);
+	border-radius: 5px;
 	color: #fff;
 	background: none;
 }
@@ -148,21 +160,19 @@ p.tag div {
 .index-wrapper input {
 	width: 200px;
 	height: 25px;
-	margin: 20px 0;
-	border-radius: 2px;
+	margin: 25px 0;
 }
 
 .index-wrapper .colors {
 	width: 150px;
 	height: 25px;
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 }
 
 .index-wrapper .tagit {
-	width: 150px;
+	width: 35%;
 	height: 35px;
 	font-size: 20px;
-	border-radius: 2px;
 	font-family: 'Megrim', cursive;
 }
 

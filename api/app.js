@@ -5,21 +5,23 @@ const bodyParser = require('body-parser')
 const app = express()
 //tell the api to respond to anybody in the multiverse!
 app.use(cors())
-//for parsing applicationi/json
+//for parsing application/json
 app.use(bodyParser.json());
 //for parsing application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true}));
 
 
-let tags = []
+let arrayObj = [];
+
 
 app.get('/', function(req, res) {
-	res.send(tags)
+	console.log(arrayObj.tags, arrayObj.col)
+	res.send(arrayObj)
 })
 
 app.post('/tag', function(req, res) {
-	tags.push(req.body.tag)
-	console.log('tags array: ', tags)
+	arrayObj.push({ "tags": req.body.tag, "col": req.body.colors })
+	console.log('tags array: ', arrayObj)
 	res.send('This is how you add tags')
 })
 
