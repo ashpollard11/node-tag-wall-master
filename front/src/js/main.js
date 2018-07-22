@@ -1,5 +1,4 @@
 
-
 let inputField = document.querySelector('[name="tag"]')
 
 // when the user clicks the button

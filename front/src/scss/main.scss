@@ -16,6 +16,7 @@ TABLE OF CONTENTS:
 /* 0. Reset ================================= */
 @import 'reset';
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+@import url('https://fonts.googleapis.com/css?family=Megrim');
 
 /* 1. Main Layout ================================= */
 
@@ -24,11 +25,23 @@ TABLE OF CONTENTS:
 }
 
 body {
-	background: #ccc;
+	width: 100%;
+	height: 100vh;
+	background: #000;
+	color: #fff;
+	font-family: 'Megrim', cursive;
 }
 
 body.wall {
-	background-image: url(../img/brick.jpg);
+	background: url(../img/stars.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+
+body.index {
+	background: url(../img/index-bg.jpg) no-repeat left center fixed;
+	background-size: cover;
+	background-blend-mode: multiply;
+	background-color: rgba(0,0,0,0.2);
 }
 
 
@@ -39,5 +52,77 @@ p.tag {
 	position: absolute;
 	font-family: 'Rock Salt', cursive;
 	font-size: 4em;
-	text-shadow: 0 0 10px rgba(0,0,0,0.75); 
+	text-shadow: 0 0 10px rgba(0,0,0,0.75);
+	color: #fff;
+
+	div {
+		background: url(../img/arrow.png) no-repeat center;
+		background-size: contain;
+		width: 50px;
+		height: 100px;
+	}
 }
+
+.index-wrapper {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	h1 {
+		font-size: 10vw;
+		background: linear-gradient(45deg, rgba(92,214,68,1) 1%,rgba(107,207,234,1) 20%,rgba(204,81,161,1) 
+		40%,rgba(170,82,229,1) 60%,rgba(237,144,23,1) 80%,rgba(246,230,180,1) 100%); 
+		/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	label {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 30%;
+
+		input, .colors {
+			margin-left: auto;
+		}
+	}
+
+	input, .colors, .tagit {
+		border: 2px solid #fff;
+		color: #fff;
+		background: none;
+	}
+
+
+
+	input {
+		width: 200px;
+		height: 25px;
+		margin: 20px 0;
+		border-radius: 2px;
+	}
+
+	.colors {
+		width: 150px;
+		height: 25px;
+		margin-bottom: 20px;
+	}
+
+	.tagit {
+		width: 150px;
+		height: 35px;
+		font-size: 20px;
+		border-radius: 2px;
+		font-family: 'Megrim', cursive;
+		
+		span {
+			color: #edff60;
+		}
+	}
+}
+
