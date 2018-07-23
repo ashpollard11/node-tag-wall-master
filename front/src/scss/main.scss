@@ -15,6 +15,7 @@ TABLE OF CONTENTS:
 
 /* 0. Reset ================================= */
 @import 'reset';
+@import 'variables';
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
 @import url('https://fonts.googleapis.com/css?family=Megrim');
 
@@ -46,7 +47,12 @@ body.index {
 	background: url(../img/index-bg.jpg) no-repeat left center fixed;
 	background-size: cover;
 	background-blend-mode: multiply;
-	background-color: rgba(0,0,0,0.2);
+	background-color: rgba(0,0,0,0.8);
+
+	@include bp-tablet {
+		background-color: rgba(0,0,0,0.2);
+		transition: 0.2s ease;
+	}
 }
 
 
@@ -131,8 +137,18 @@ p.tag {
 		height: 35px;
 		font-size: 20px;
 		font-family: 'Megrim', cursive;
+		margin-bottom: 25px;
 		
 		span {
+			color: #edff60;
+		}
+	}
+
+	h2 {
+		display: none;
+		font-size: 4vw;
+
+		a {
 			color: #edff60;
 		}
 	}

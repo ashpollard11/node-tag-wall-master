@@ -2,6 +2,11 @@
 
 var tagInput = document.querySelector('[name="tag"]');
 var colorInput = document.querySelector('.colors');
+var confirm = document.querySelector('.confirm');
+
+tagInput.addEventListener('keyup', function (e) {
+	confirm.style.display = 'none';
+});
 
 // when the user clicks the button
 document.querySelector('button.tagit').addEventListener("click", function () {
@@ -9,6 +14,7 @@ document.querySelector('button.tagit').addEventListener("click", function () {
 	var selectedColor = colorInput.value;
 	console.log('got tag and color: ', enteredTag, selectedColor);
 	sendTag(enteredTag, selectedColor);
+	confirm.style.display = 'block';
 	// send the tag to the server
 });
 

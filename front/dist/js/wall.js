@@ -12,11 +12,6 @@ var showTag = function showTag() {
 	axios.get(url).then(function (response) {
 		console.log(response);
 
-		// let randomColor = function (element) {
-		// 	response.data.col.forEach((colors) => {
-		// 		
-		// 	})
-		// }
 		response.data.forEach(function (arr) {
 			var pEl = document.createElement('p');
 			var arrow = document.createElement('div');
@@ -30,7 +25,6 @@ var showTag = function showTag() {
 			pEl.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
 
 			pEl.style.color = arr.col;
-			// randomColor(pEl);
 		});
 	}).catch(function (error) {
 		console.log(error);

@@ -5,7 +5,7 @@ window.addEventListener('load', function(e) {
 	showTag()
 })
 
-let showTag = function () {
+const showTag = function () {
 	let url = 'http://localhost:1337';
 
 	axios.get(url)
@@ -13,11 +13,6 @@ let showTag = function () {
 	.then(function (response) {
 		console.log(response);
 
-		// let randomColor = function (element) {
-		// 	response.data.col.forEach((colors) => {
-		// 		
-		// 	})
-		// }
 		response.data.forEach((arr) => {
 			const pEl = document.createElement('p');
 			const arrow = document.createElement('div');
@@ -32,7 +27,6 @@ let showTag = function () {
 			pEl.style.left = Math.floor(Math.random()*window.innerWidth) + 'px';
 
 			pEl.style.color = arr.col;
-			// randomColor(pEl);
 		})
 
 		
